@@ -317,15 +317,17 @@ public class TeamWorkbookPDFReporter extends ExecutivePDFReporter {
     }
 
 	private String convertHtml(final String ruleDesc) {
-		String html = ruleDesc.replaceAll("<.*?>", " ").replaceAll("", "");
-        html = html.replaceAll("<.*?", "");  
-        html = html.replaceAll("&lt;", "<");
-        html = html.replaceAll("&gt;", ">");
-        html = html.replaceAll("&rsquo;", "’");
-        html = html.replaceAll("&mdash;", "—");
-        html = html.replaceAll("&ndash;", "–");
+		String html = "";
+		if (ruleDesc != null) {
+			html = ruleDesc.replaceAll("<.*?>", " ").replaceAll("", "");
+		        html = html.replaceAll("<.*?", "");  
+		        html = html.replaceAll("&lt;", "<");
+		        html = html.replaceAll("&gt;", ">");
+		        html = html.replaceAll("&rsquo;", "’");
+		        html = html.replaceAll("&mdash;", "—");
+		        html = html.replaceAll("&ndash;", "–");			
+		}
 		return html;
-	
 	}
 
     /**
