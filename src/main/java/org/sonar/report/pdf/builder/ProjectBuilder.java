@@ -134,7 +134,7 @@ public class ProjectBuilder extends AbstractBuilder {
         LOG.info("Retrieving project info for {} " ,project.getKey());
         ComponentsQuery rq = ComponentsQuery.create(project.getKey());
         rq.setstrategy("children");
-        rq.setqualifiers("BRC");
+        rq.setqualifiers("TRK");
         ComponentsTree resources = sonar.find(rq);
 
         if (resources != null) {
